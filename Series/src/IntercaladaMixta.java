@@ -6,22 +6,30 @@ public class IntercaladaMixta {
 		Scanner x = new Scanner(System.in);
 		System.out.println("Digite valor de N");
 		int N = x.nextInt();
-		int serie = 1;
-		String salida="1"; 
-		int cont=1;
-		for (int i=1 ; i<=N ; i++)
+		int a[]=new int[N];
+		for (int i=0;i<N;i++)
 		{
-			if ( i%2 != 0) // es impar
+			if (i==0) 
 			{
-				serie = serie + cont;
-				cont++;
+				a[i]=1;
 			}
-			else // es impar
-				serie = serie * 2;
-			//concatenar valores
-			salida = salida + " " + serie;
+			else
+			{
+				if(i%2==0)
+				{				
+					a[i]=a[i-1]*2;
+				}
+				else
+				{
+					a[i]=a[i-1]+(i+1)/2;
+				}
+			}
 		}
-		System.out.print(salida);
+		for (int i=0;i<N;i++)
+		{
+			System.out.print(a[i]+" ");
+		}
+
 
 	}
 
