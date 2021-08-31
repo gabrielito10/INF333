@@ -3,35 +3,33 @@ public class MetodoBurbuja {
 
 	public static void main(String[] args) {
 		Scanner x = new Scanner(System.in);
-		System.out.println("Tamaño del array");
+		System.out.print("Digite tamaño del array -> ");
 		int N = x.nextInt();
-		int lista[] = new int[N];
-		// introduciendo datos
-		for (int i=0 ; i<N ; i++)
+		int array[] = new int[N];
+		
+		//INTRODUCIENDO DATOS
+		for ( int i=0 ; i<N ; i++)
 		{
-			System.out.print("lista en la posicion " + i + "--> ");
-			lista[i] = x.nextInt();
+			System.out.print("Array en la posicion " + i + "-> ");
+			array[i]=x.nextInt();
 		}
-		//metodo de la burbuja
+		//METODO DE LA BRUBUJA
 		for (int i=0 ; i<N ; i++)
 		{
-			for (int j=0 ; j<N-1 ; j++)
+			for ( int j=0 ; j<N-1 ; j++)
 			{
-				if (lista[j] > lista[j+1])
+				if (array[i] < array[j])
 				{
-					int temp = lista[j];
-					lista[j] = lista[j+1];
-					lista[j+1] = temp;
+					int aux=array[j];
+					array[j]=array[i];
+					array[i]= aux;
 				}
-				
 			}
 		}
-		
-		// imprimiendo la lista
-		System.out.print("La lista ordenada es: ");
-		for (int i=0 ; i<N ; i++)
+		//SALIDA DE DATOS
+		for ( int i=0 ; i<N ; i++)
 		{
-			System.out.print(lista[i] + " ");
+			System.out.print(array[i] + " ");
 		}
 	}
 
