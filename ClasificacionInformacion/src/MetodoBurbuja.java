@@ -13,7 +13,8 @@ public class MetodoBurbuja {
 			System.out.print("Array en la posicion " + i + "-> ");
 			array[i]=x.nextInt();
 		}
-		//METODO DE LA BRUBUJA
+		
+		//METODO DE LA BURBUJA
 		for (int i=0 ; i<N ; i++)
 		{
 			for ( int j=0 ; j<N-1 ; j++)
