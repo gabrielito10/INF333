@@ -1,9 +1,9 @@
 import java.util.*;
-public class MetodoBurbuja {
+public class MetodoSeleccion {
 
 	public static void main(String[] args) {
 		Scanner x = new Scanner(System.in);
-		System.out.print("Digite tamaño del array -> ");
+		System.out.print("Digite tamaï¿½o del array -> ");
 		int N = x.nextInt();
 		int array[] = new int[N];
 		
@@ -13,18 +13,27 @@ public class MetodoBurbuja {
 			System.out.print("Array en la posicion " + i + "-> ");
 			array[i]=x.nextInt();
 		}
-		
-		//METODO DE LA BURBUJA
+		//METODO DE SELECCION
+		int menor, pos;
 		for (int i=0 ; i<N ; i++)
 		{
-			for ( int j=0 ; j<N-1 ; j++)
+			menor = array[i];
+			pos = i;
+			//ENCONTRANDO EL MENOR
+			for ( int j=i+1 ; j<N ; j++)
 			{
-				if (array[i] < array[j])
+				if (array[j] < menor)
 				{
-					int aux=array[j];
-					array[j]=array[i];
-					array[i]= aux;
+					menor = array[j];
+					pos = j;
 				}
+			}
+			//SI EL MENOR ESTA EN OTRA POSICION
+			if (pos != i)
+			{
+				int aux = array[i];
+				array[i] = array[pos];
+				array[pos] = aux;
 			}
 		}
 		//SALIDA DE DATOS
