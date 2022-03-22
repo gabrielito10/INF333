@@ -17,5 +17,4 @@ public class SerieTripleProgresiva {
         	b*=i;
         }
 	}
-
 }
